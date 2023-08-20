@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = 11
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testImplementation 'junit:junit:4.13.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    compileOnly project(':annotation')
+    implementation project(':annotation')
+    annotationProcessor project(':annotation')
+
+
+    testImplementation project(':annotation')
+    testAnnotationProcessor project(':annotation')
+
+}
+
+
+test {
+    useJUnitPlatform()
+}

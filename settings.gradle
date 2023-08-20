@@ -1,0 +1,5 @@
+rootProject.name = 'Rexbok'
+
+include 'annotation'
+include 'application'
+
